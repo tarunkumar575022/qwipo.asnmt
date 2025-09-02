@@ -34,10 +34,10 @@ export default function AddressForm({ customerId, editingAddress, onSaved, onCan
     try {
       if (editingAddress && editingAddress.id) {
         // Update existing address
-        await axios.put(`http://localhost:5000/api/addresses/${editingAddress.id}`, form);
+        await axios.put(`https://qwipo-asnmt-backend.onrender.com/api/addresses/${editingAddress.id}`, form);
       } else {
         // Create new address for customer
-        await axios.post(`http://localhost:5000/api/customers/${customerId}/addresses`, form);
+        await axios.post(`https://qwipo-asnmt-backend.onrender.com/api/customers/${customerId}/addresses`, form);
       }
       setForm({ address_details: "", city: "", state: "", pin_code: "" });
       setError("");
