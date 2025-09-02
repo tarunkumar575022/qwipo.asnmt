@@ -6,7 +6,7 @@ function CustomerListPage() {
   const [customers, setCustomers] = useState([]);
 
   const fetchCustomers = () => {
-    axios.get("http://localhost:5000/api/customers")
+    axios.get("https://qwipo-asnmt-backend.onrender.com/api/customers")
       .then(res => setCustomers(res.data))
       .catch(err => console.error(err));
   };
@@ -17,7 +17,7 @@ function CustomerListPage() {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this customer?")) {
-      axios.delete(`http://localhost:5000/api/customers/${id}`)
+      axios.delete(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}`)
         .then(() => fetchCustomers());
     }
   };
