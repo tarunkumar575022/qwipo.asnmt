@@ -1,0 +1,72 @@
+/* Address form card */
+.address-form {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #e6edf6;
+  background: #ffffff;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* inputs/textarea in address form */
+.address-form textarea {
+  width: 100%;
+  min-height: 84px;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.address-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* buttons for address actions */
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.primary-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #0056b3;
+}
+
+.secondary-btn {
+  background: #6c757d;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #5a6268;
+}
+
+.error {
+  color: #a71d2a;
+  margin-bottom: 8px;
+}
