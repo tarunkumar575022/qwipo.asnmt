@@ -9,16 +9,16 @@ function CustomerFormPage() {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/api/customers/${id}`).then(res => setForm(res.data));
+      axios.get(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}`).then(res => setForm(res.data));
     }
   }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (id) {
-      axios.put(`http://localhost:5000/api/customers/${id}`, form).then(() => navigate("/"));
+      axios.put(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}`, form).then(() => navigate("/"));
     } else {
-      axios.post("http://localhost:5000/api/customers", form).then(() => navigate("/"));
+      axios.post("https://qwipo-asnmt-backend.onrender.com/api/customers", form).then(() => navigate("/"));
     }
   };
 
