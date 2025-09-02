@@ -11,10 +11,10 @@ function CustomerDetailPage() {
   const [editingAddress, setEditingAddress] = useState(null);
 
   const fetchData = () => {
-    axios.get(`http://localhost:5000/api/customers/${id}`)
+    axios.get(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}`)
       .then(res => setCustomer(res.data))
       .catch(() => setCustomer({}));
-    axios.get(`http://localhost:5000/api/customers/${id}/addresses`)
+    axios.get(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}/addresses`)
       .then(res => setAddresses(res.data))
       .catch(() => setAddresses([]));
   };
@@ -27,7 +27,7 @@ function CustomerDetailPage() {
   // Delete customer
   const handleDeleteCustomer = () => {
     if (!window.confirm("Delete this customer and all addresses?")) return;
-    axios.delete(`http://localhost:5000/api/customers/${id}`)
+    axios.delete(`https://qwipo-asnmt-backend.onrender.com/api/customers/${id}`)
       .then(() => navigate("/"))
       .catch(err => alert("Delete failed: " + (err?.response?.data?.error || err.message)));
   };
@@ -35,7 +35,7 @@ function CustomerDetailPage() {
   // Delete address
   const handleDeleteAddress = (addressId) => {
     if (!window.confirm("Delete this address?")) return;
-    axios.delete(`http://localhost:5000/api/addresses/${addressId}`)
+    axios.delete(`https://qwipo-asnmt-backend.onrender.com/api/addresses/${addressId}`)
       .then(() => fetchData())
       .catch(err => alert("Delete failed: " + (err?.response?.data?.error || err.message)));
   };
